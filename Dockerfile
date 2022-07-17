@@ -1,5 +1,6 @@
 FROM node:lts-alpine
-RUN apk add git openssl build-base make
+RUN apk upgrade
+RUN apk add git
 WORKDIR /app
 RUN git clone https://github.com/louislam/uptime-kuma .
 RUN npm run setup
