@@ -4,7 +4,7 @@ WORKDIR /usr/src
 RUN git clone https://github.com/cloudflare/cloudflared .
 RUN git checkout 2022.7.1
 RUN make cloudflared
-FROM node:lts-alpine
+FROM node:lts-alpine as runner
 COPY --from=cloudflared-builder /usr/src/cloudflared /usr/bin/cloudflared
 RUN apk upgrade
 RUN apk add git
