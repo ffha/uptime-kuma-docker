@@ -7,3 +7,4 @@ RUN yarn setup
 RUN npm install pm2 -g
 RUN pm2 install pm2-logrotate
 RUN apk add tini
+ENTRYPOINT ["/sbin/tini", "--"]
