@@ -1,6 +1,6 @@
 FROM node:lts-alpine
 RUN apk upgrade
-RUN apk add git
+RUN apk add git cloudflared
 WORKDIR /app
 RUN git clone https://github.com/louislam/uptime-kuma .
 RUN npm run setup
